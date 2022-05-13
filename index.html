@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Water+Brush&display=swap" rel="stylesheet">  
+    </head>
+    <body>
+        <header>
+            <h2>PoE Betrayal Planner</h2>
+        </header>
+        <main>
+            <div class="topRow">
+                <div class="column" ondragover="onDragOver(event)" ondrop="onDrop(event)" id="transportation">
+                    <h2>Transportation</h2>
+                </div>
+                <div class="column" ondragover="onDragOver(event)" ondrop="onDrop(event)" id="fortification">
+                    <h2>Fortification</h2>
+                </div>
+                <div class="column" ondragover="onDragOver(event)" ondrop="onDrop(event)" id="research">
+                    <h2>Research</h2>
+                </div>
+                <div class="column" ondragover="onDragOver(event)" ondrop="onDrop(event)" id="investigation">
+                    <h2>Investigation</h2>
+                </div>
+                <div class="column" ondragover="onDragOver(event)" ondrop="onDrop(event)" id="syndicate"></div>
+            </div>
+        </main>
+        <footer>
+            <h2>Drag and drop syndicate members to see their rewards</h2>
+        </footer>
+        <script src="scripts/init.js"></script>
+        <script src="scripts/dragDrop.js"></script> 
+    </body>
+</html>
