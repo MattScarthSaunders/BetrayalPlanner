@@ -2,11 +2,18 @@ function onDragStart(event) {
     event
         .dataTransfer
         .setData('text/plain', event.target.id);        //gets draggable object's id and sets it to the dataTransfer object
+
+    const id = event
+        .dataTransfer
+        .getData('text');
+    
+    const draggableElement = document.getElementById(id);
+
+    arrayCleaner(draggableElement);
 }
 
 function onDragOver(event){
     event.preventDefault();     //overrides default browser behavior so that divs can be drag/dropped
-
 }
 
 function onDrop(event){
@@ -24,7 +31,7 @@ function onDrop(event){
     if (dropzone.getAttribute('class') === 'column'){
         dropzone.appendChild(draggableElement);     //append dragged element to dropzone element
         
-        rewards(event.currentTarget, draggableElement);     //sets award of member    
+        rewards(event.currentTarget, draggableElement);     //sets award of member   
         
         event
         .dataTransfer
@@ -33,7 +40,6 @@ function onDrop(event){
         console.log("undroppable");
     }
 
-
-       
-
 }
+
+
