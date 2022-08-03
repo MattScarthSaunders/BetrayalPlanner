@@ -37,7 +37,7 @@ function rewards(column, draggableElement) {
     const memberName = memberHTML.getAttribute('id');       //get id of member
     const rewardEle = memberHTML.lastChild;     //laziness, from a previous iteration of code
 
-    rewardEle.innerHTML = betrayalMembers[memberName][divName];
+    rewardEle.innerHTML = betrayalMembers[memberName][divName]; //sets new reward content to correct data
 }
 
 initialiser();
