@@ -1,4 +1,4 @@
-//list of their rewards IN ORDER OF [T,F,R,I]
+//members and rewards
 const betrayalMembers = {
     Aisling: {transportation: "Double-Veiled Weapons and Jewellery", fortification: "Double-Veiled Armour and Jewellery", research: "Veiled Chaos. T4: Remove a random mod and Add 1 Veiled mod", intervention: "Torment Scarab"},
     Cameria: {transportation:"1 Timeworn Unique", fortification: "Harbinger Orbs", research:"Orbs of Unmaking", intervention:"Sulphite Scarab"},
