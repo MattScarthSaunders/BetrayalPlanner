@@ -27,7 +27,6 @@ footer{
   max-height: 100vh;
 }
 
-
 #transportation {
   display: flex;
   align-content: flex-start;
@@ -46,12 +45,6 @@ footer{
 
 #transportation > h2 {
   margin: 0 auto;
-}
-
-.tLister {
-  color: white;
-  margin-right: 89%;
-  text-align: center;
 }
 
 #fortification {
@@ -74,13 +67,6 @@ footer{
   margin: 0 auto;
 }
 
-.fLister {
-  color: white;
-  margin-left: 12%;
-  margin-right: 78%;
-  text-align: center;
-}
-
 #research {
   display: flex;
   align-content: flex-start;
@@ -101,13 +87,6 @@ footer{
   margin: 0 28% 0 28%;
 }
 
-.rLister {
-  color: white;
-  margin-left: 23%;
-  margin-right: 66%;
-  text-align: center;
-}
-
 #intervention {
   display: flex;
   align-content: flex-start;
@@ -126,13 +105,6 @@ footer{
 
 #intervention > h2 {
   margin: 0 auto;
-}
-
-.iLister {
-  color: white;
-  margin-left: 35%;
-  margin-right: 55%;
-  text-align: center;
 }
 
 #syndicate{
@@ -203,6 +175,15 @@ h2{
   color: white;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   font-size: 1em;
+}
+
+.rewardLister {
+  display: flex;
+  flex-direction: row;
+}
+
+.rewardListItem {
+  color:white;
 }
 
 

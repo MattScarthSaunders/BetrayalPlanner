@@ -19,6 +19,8 @@ const betrayalMembers = {
     Vorici: {transportation:"Random Quality Gems", fortification:"Socket Currency", research:"1, 1-2, 1-3, 1-6 White Sockets", intervention:"Shaper Scarab"}
 };
 
+let rewardList = [];
+
 function initialiser(){
 
     for(let element in betrayalMembers) {
@@ -34,10 +36,33 @@ function initialiser(){
 function rewards(column, draggableElement) {
     const divName = column.getAttribute('id');      //get target column id
     const memberHTML = draggableElement;        //get dragged syndicate member info
-    const memberName = memberHTML.getAttribute('id');       //get id of member
-    const rewardEle = memberHTML.lastChild;     //laziness, from a previous iteration of code
+    const memberName = memberHTML.getAttribute('id');       
+    const rewardEle = memberHTML.lastChild;    
+    const rewardContent = betrayalMembers[memberName][divName]; 
 
-    rewardEle.innerHTML = betrayalMembers[memberName][divName]; //sets new reward content to correct data
+    rewardEle.innerHTML = rewardContent; //sets new reward content to correct data
+    updateList("", rewardContent);
+
+}
+
+function updateList(draggedElement, rewardContent) {
+
+    if (rewardContent != "") {
+        rewardList.push(rewardContent);
+        document.getElementById("rewardListContainer").innerHTML = 
+        `<div class="rewardListItem" id="reward">${rewardList.join("<br>")}</div>`;
+    }
+
+    if (draggedElement != "") {
+        const memberHTML = draggedElement;        //get dragged syndicate member info       
+        const rewardEle = memberHTML.lastChild;
+
+        rewardList = rewardList.filter((x) => x != rewardEle.innerHTML);
+
+        document.getElementById("rewardListContainer").innerHTML = 
+        `<div class="rewardListItem" id="reward">${rewardList.join("<br>")}</div>`;
+    }
+    
 }
 
 initialiser();

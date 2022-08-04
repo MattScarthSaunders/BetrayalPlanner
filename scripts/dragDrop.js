@@ -1,5 +1,8 @@
 function onDragStart(event) {
     event.dataTransfer.setData('text/plain', event.target.id);        //gets draggable object's id and sets it to the dataTransfer object
+    const id = event.dataTransfer.getData('text');       //gets the previously set data (the id of the object)
+    const draggableElement = document.getElementById(id);       //selects the element based on the id
+    updateList(draggableElement, "");
 }
 
 function onDragOver(event){
