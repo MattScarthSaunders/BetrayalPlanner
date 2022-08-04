@@ -14,7 +14,8 @@ header{
 }
 
 footer{
-  margin-top: auto;
+  bottom: 0;
+  margin-top: 1rem;
   background-color: black;
   min-height: 40px;
 }
@@ -25,86 +26,46 @@ footer{
   justify-content:start;
   align-content: center;
   max-height: 100vh;
+  margin-bottom: 1rem;
+}
+#transportation, #fortification, #research, #intervention {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: rgb(74, 81, 145);
+  background-size: cover;
+  background-position: center;
+  border: 3px solid white;
+  min-width: 220px;
+  max-width: 220px;
+  min-height: 700px;
+  margin-bottom: 1rem;
 }
 
 #transportation {
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  background-color: rgb(74, 81, 145);
   background-image: url(../images/transportation.jpg);
-  background-size: cover;
-  background-position: center;
-  border: 3px solid white;
-  min-width: 220px;
-  max-width: 220px;
-  min-height: 700px;
-}
-
-#transportation > h2 {
-  margin: 0 auto;
 }
 
 #fortification {
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  background-color: rgb(74, 81, 145);
   background-image: url(../images/fortification.jpg);
-  background-size: cover;
-  background-position: center;
-  border: 3px solid white;
-  min-width: 220px;
-  max-width: 220px;
-  min-height: 700px;
-}
-
-#fortification > h2 {
-  margin: 0 auto;
 }
 
 #research {
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  background-color: rgb(74, 81, 145);
   background-image: url(../images/research.jpg);
-  background-size: cover;
-  background-position: right;
-  border: 3px solid white;
-  min-width: 220px;
-  max-width: 220px;
-  min-height: 700px;
+}
+
+#intervention {
+  background-image: url(../images/intervention.jpg);
+}
+
+#transportation > h2, #fortification > h2, #intervention > h2 {
+  margin: 0 auto;
 }
 
 #research > h2 {
   margin: 0 28% 0 28%;
-}
-
-#intervention {
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
-  background-color: rgb(74, 81, 145);
-  background-image: url(../images/intervention.jpg);
-  background-size: cover;
-  background-position: center;
-  border: 3px solid white;
-  min-width: 220px;
-  max-width: 220px; 
-  min-height: 700px;
-}
-
-#intervention > h2 {
-  margin: 0 auto;
 }
 
 #syndicate{
@@ -121,7 +82,8 @@ footer{
   border: 3px solid white;
   min-width: 1000px; 
   min-height: 700px;
-  max-height: 750vh;  
+  max-height: 750vh; 
+  margin-bottom: 1rem; 
 }
 
 .syndicateMember{
@@ -170,6 +132,13 @@ footer{
   max-width: 100px;
 }
 
+h1{
+  font-family: 'Cinzel', serif;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 2em;
+}
+
 h2{
   font-family: 'Cinzel', serif;
   color: white;
@@ -177,9 +146,19 @@ h2{
   font-size: 1em;
 }
 
+#rewardsListTitle {
+  text-align: center;
+}
+
 .rewardLister {
   display: flex;
   flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  gap: 3rem;
+  border: 1px solid white;
+  padding: 1rem;
 }
 
 .rewardListItem {

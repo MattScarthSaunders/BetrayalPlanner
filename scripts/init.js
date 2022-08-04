@@ -11,7 +11,7 @@ const betrayalMembers = {
     Janus: {transportation:"Quality Currency", fortification:"Currency Shards", research:"Expedition Currency", intervention:"Expedition Scarab"},
     Jorgin: {transportation:"1, 2, 3 Talismans", fortification:"1, 2, 3 Aspect Mod Rares", research:"Tier 1, 2, 3 Corrupt Amulet to Talisman", intervention:"Bestiary Scarab"},
     Korell: {transportation:"Essences", fortification:"Map Fragments", research:"Fossils", intervention:"Elder Scarab"},
-    Leo: {transportation:"Catalysts", fortification:"Random Currency", research:"Blessed,Divine,Ex,2 Ex on an Item", intervention:"Metamorph Scarab"},
+    Leo: {transportation:"Catalysts", fortification:"Random Currency", research:"Blessed, Divine, Ex, 2 Ex on an Item", intervention:"Metamorph Scarab"},
     Riker: {transportation:"Take One Currency (Timed)", fortification:"Take One Unique (Timed)", research:"Take One Veiled Rare (Timed)", intervention:"Blighted Scarab"},
     Rin: {transportation:"Normal Maps", fortification:"Rare Maps", research:"Unique Maps", intervention:"Cart. Scarab"},
     Tora: {transportation:"Take One Item (Timed)", fortification:"Lab enchanted Gloves/Boots/Helmets", research:"20, 70, 200M XP to a Gem", intervention:"Harbinger Scarab"},
@@ -19,7 +19,7 @@ const betrayalMembers = {
     Vorici: {transportation:"Random Quality Gems", fortification:"Socket Currency", research:"1, 1-2, 1-3, 1-6 White Sockets", intervention:"Shaper Scarab"}
 };
 
-let rewardList = [];
+let rewardList = {transportation: [], fortification: [], research: [], intervention: [], syndicate: []};
 
 function initialiser(){
 
@@ -35,32 +35,28 @@ function initialiser(){
 
 function rewards(column, draggableElement) {
     const divName = column.getAttribute('id');      //get target column id
-    const memberHTML = draggableElement;        //get dragged syndicate member info
-    const memberName = memberHTML.getAttribute('id');       
-    const rewardEle = memberHTML.lastChild;    
+    const memberName = draggableElement.getAttribute('id');       
+    const rewardEle = draggableElement.lastChild;    
     const rewardContent = betrayalMembers[memberName][divName]; 
 
     rewardEle.innerHTML = rewardContent; //sets new reward content to correct data
-    updateList("", rewardContent);
+    updateList("", rewardContent, divName);
 
 }
 
-function updateList(draggedElement, rewardContent) {
+function updateList(draggedElement, rewardContent, column) {
 
     if (rewardContent != "") {
-        rewardList.push(rewardContent);
-        document.getElementById("rewardListContainer").innerHTML = 
-        `<div class="rewardListItem" id="reward">${rewardList.join("<br>")}</div>`;
+        rewardList[column].push(rewardContent);
+        document.getElementById(`${column}ListItem`).innerHTML = rewardList[column].join("<br>");
     }
 
-    if (draggedElement != "") {
-        const memberHTML = draggedElement;        //get dragged syndicate member info       
-        const rewardEle = memberHTML.lastChild;
+    if (draggedElement != "") { 
+        const rewardEle = draggedElement.lastChild;
 
-        rewardList = rewardList.filter((x) => x != rewardEle.innerHTML);
+        rewardList[column] = rewardList[column].filter((reward) => reward != rewardEle.innerHTML);
 
-        document.getElementById("rewardListContainer").innerHTML = 
-        `<div class="rewardListItem" id="reward">${rewardList.join("<br>")}</div>`;
+        document.getElementById(`${column}ListItem`).innerHTML = rewardList[column].join("<br>");
     }
     
 }

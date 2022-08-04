@@ -8,13 +8,13 @@
     </head>
     <body>
         <header>
-            <h2>PoE Betrayal Planner</h2>
+            <h1>PoE Betrayal Planner</h1>
+            <h2>Drag and drop syndicate members to see their rewards</h2>
         </header>
         <main>
             <div class="topRow">
                 <div class="column" ontouchmove="onDragOver(event)" ondragover="onDragOver(event)" ontouchend="onDrop(event)" ondrop="onDrop(event)" id="transportation">
-                    <h2>Transportation</h2>
-                    
+                    <h2>Transportation</h2> 
                 </div>
                 <div class="column" ontouchmove="onDragOver(event)" ondragover="onDragOver(event)" ontouchend="onDrop(event)" ondrop="onDrop(event)" id="fortification">
                     <h2>Fortification</h2>
@@ -27,12 +27,14 @@
                 </div>
                 <div class="column" ontouchmove="onDragOver(event)" ondragover="onDragOver(event)" ontouchend="onDrop(event)" ondrop="onDrop(event)" id="syndicate"></div>
             </div>
+            <h2 id="rewardsListTitle">Rewards List:</h2>
             <div class="rewardLister" id="rewardListContainer">
+                <div class="rewardListItem" id="transportationListItem"></div>
+                <div class="rewardListItem" id="fortificationListItem"></div>
+                <div class="rewardListItem" id="researchListItem"></div>
+                <div class="rewardListItem" id="interventionListItem"></div>
             </div>
         </main>
-        <footer>
-            <h2>Drag and drop syndicate members to see their rewards</h2>
-        </footer>
         <script src="scripts/init.js"></script>
         <script src="scripts/dragDrop.js"></script> 
     </body>
