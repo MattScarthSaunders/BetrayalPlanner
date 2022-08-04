@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body{ 
   display:flex; 
   flex-direction:column; 
@@ -28,7 +29,8 @@ footer{
   max-height: 100vh;
   margin-bottom: 1rem;
 }
-#transportation, #fortification, #research, #intervention {
+
+.column {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
