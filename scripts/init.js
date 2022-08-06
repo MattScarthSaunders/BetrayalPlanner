@@ -28,7 +28,7 @@ function initialiser(){
         `<div class="syndicateMember" id="${element}" draggable="true" ontouchstart="onDragStart(event)" ondragstart="onDragStart(event)">
         <div class="memberName"><p id="${element}">${element}</p></p></div>
         <div class="memberImg"><img src="images/${element}.png" id="${element}" class="profile"></div>
-        <div class="reward"><p id="reward">rewards</p></div></div>`;  //populates syndicate list
+        <div class="reward" id="reward">rewards</div></div>`;  //populates syndicate list
     };  
 
 }
@@ -39,7 +39,9 @@ function rewards(column, draggableElement) {
     const rewardEle = draggableElement.lastChild;    
     const rewardContent = betrayalMembers[memberName][divName]; 
 
-    rewardEle.innerHTML = rewardContent; //sets new reward content to correct data
+    rewardEle.innerHTML =
+        divName === 'syndicate' ? 'Rewards' : rewardContent;  //sets new reward content to correct data
+    
     updateList("", rewardContent, divName);
 
 }
